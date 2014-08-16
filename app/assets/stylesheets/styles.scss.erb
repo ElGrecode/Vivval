@@ -1,0 +1,76 @@
+body {
+  background: url(<%= asset_data_uri 'lander_background.jpg'%>);
+  background-size: cover;
+  background-position: top right;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 16px;
+}
+
+h1, h2 {
+  color: #cd7748;
+}
+
+h1 {
+
+}
+
+h2 {
+  font-size: 2.4em;
+  font-weight: normal;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0.5em;
+}
+
+/***************  Lander  ***************/
+#lander_wrapper {
+  h1 {
+    position: absolute;
+    margin-left: -9999px;
+  }
+}
+
+.requestInvite {
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  float: right;
+  margin-top: 200px;
+  margin-right: 100px;
+}
+
+.new_temporary_user {
+
+  input {
+    border-radius: 3px;
+    border: none;
+  }
+
+  input[type=email] {
+    width: 65%;
+    height: 1.4em;
+    padding: 5px;
+    font-size: .8em;
+    font-style: italic; 
+    color: #818c8d;
+    text-align: center;
+    border: none;
+    background: #334555;
+    margin: 0 0 10px 0;
+  }
+
+  input[type=submit] {
+    width: 25%;
+    height: 28px;
+    padding: 5px;
+    font-size: .8em;
+    color: #579794;
+    background: none;
+    border: 1px solid #579794;
+  }
+
+  input[type=submit]:hover {
+    width: 25%;
+    color: white;
+    background: #579794;
+  }
+}
