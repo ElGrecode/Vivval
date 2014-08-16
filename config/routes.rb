@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'temporary_users#lander'
+  get 'success' => 'temporary_users#success', as: :success
   get 'signin' => 'temporary_users#signIn'
 
   # Example of regular route:
