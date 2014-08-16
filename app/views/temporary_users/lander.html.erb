@@ -1,0 +1,16 @@
+<div id="lander_wrapper">
+  <h1>Vivval</h1>
+  <div class="requestInvite">
+    <h2>Hyper Local Trending</h2>
+    <% if @temporary_user %>  
+      <%= form_for @temporary_user, {url: users_path} do |f| -%>
+        <%= f.email_field :email, placeholder: 'myName@someEmail.com' %>
+        <%= f.submit 'Request Invite' %>
+      <% end -%>
+      <%= link_to "Or Sign In", {action: 'lander'},  class: 'signIn'  %>
+    <% end %>
+
+    
+
+  </div>
+</div>

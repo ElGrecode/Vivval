@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  def lander
-    @temporary_user = TemporaryUser.new
-  end
 
   # GET /users
   # GET /users.json
