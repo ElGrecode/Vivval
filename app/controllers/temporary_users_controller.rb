@@ -25,6 +25,7 @@ class TemporaryUsersController < ApplicationController
     if @temporary_user.save
       # todo: create a temporary page or generate a random token
       # todo: send an email
+      UserMailer.request_invite(@temporary_user).deliver
       redirect_to success_path
     else
       # render :lander

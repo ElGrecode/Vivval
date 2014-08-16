@@ -27,7 +27,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # UUID Tools Gem for unique user IDs
-gem 'uuidtools'
+# gem 'uuidtools'
+
+# Figaro gem for maintaining environment variables
+gem 'figaro'
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
