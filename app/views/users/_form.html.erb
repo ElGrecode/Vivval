@@ -1,21 +1,14 @@
 <%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <%= f.hidden_field :email, :value => @temporary_user.email %>
+    <div class="first-container">
+      Name <%= f.text_field :first_name, placeholder: 'First', class: 'first_name', 'name' => 'first'%>
     </div>
-  <% end %>
-    First Name <%= f.text_field :first_name, placeholder: "First" %><br>
-    Last Name <%= f.text_field :last_name, placeholder: "Last" %><br>
-    Email <%= f.email_field :email, placeholder: "Email" %><br>
-    Password <%= f.password_field :password, placeholder: "Password" %><br>
-    Password Confirmation <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br>
+    <div class="last-container">
+      <%= f.text_field :last_name, placeholder: "Last", class: 'last_name', 'name' => 'last' %>
+    </div>
+    <div class="password-container">Password <%= f.password_field :password, placeholder: "Password", class: 'password', id: 'password', 'name' => 'password'%></div>
+    <div class="confirmation-container"><%= f.password_field :password_confirmation, placeholder: "Confirmation", class: 'confirmation', 'name' => 'confirmation'%></div><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Begin Exploring' %>
   </div>
 <% end %>

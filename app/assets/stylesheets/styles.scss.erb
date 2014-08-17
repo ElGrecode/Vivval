@@ -1,7 +1,6 @@
+/***************  Global  ***************/
 body {
-  background: url(<%= asset_data_uri 'lander_background.jpg'%>);
-  background-size: cover;
-  background-position: top right;
+  margin: 0px;
   font-family: 'Istok Web', sans-serif;
   font-size: 16px;
 }
@@ -25,9 +24,97 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/*  Input Elems  */
+input {
+    border-radius: 3px;
+    border: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(129, 140, 141, .7);
+  font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(129, 140, 141, .7);
+  font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(129, 140, 141, .7);
+  font-style: italic;
+}
+
+:-ms-input-placeholder {  
+  color: rgba(129, 140, 141, .7);
+  font-style: italic;
+}
+
+input:focus {
+  outline-offset: 0px;
+  outline: none;
+  box-shadow: 0px 0px 2px 1px rgba(211, 111, 61, .2);
+}
+
+input[type=text] {
+  width: 180px;
+  height: 1.5em;
+  padding: 5px;
+  font-size: 1em;
+  font-style: normal; 
+  color: #818c8d;
+  text-align: left;
+  border: none;
+  background: rgb(51, 69, 85);
+  margin: 0 0 10px 0; 
+}
+
+input[type=email] {
+  width: 230px;
+  height: 2.6em;
+  padding: 5px;
+  font-size: .8em;
+  font-style: normal; 
+  color: #818c8d;
+  text-align: center;
+  border: none;
+  background: #334555;
+  margin: 0 0 10px 0; 
+}
+
+input[type=submit] {
+  height: 42px;
+  padding: 12px;
+  font-size: .8em;
+  color: #579794;
+  background: none;
+  border: 1px solid #579794;
+}
+
+input[type=submit]:hover {
+  color: rgb(45, 57, 81);
+  background: #579794;
+}
+
+label.error {
+  position: relative;
+  font-size: .7em;
+  font-weight: normal;
+  display: block;
+  color: rgb(189, 76, 81);
+}
+
 
 /***************  Lander  ***************/
 #lander_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(<%= asset_data_uri 'lander_background.jpg'%>);
+  background-size: cover;
+  background-position: top right;
+
   h1 {
     position: absolute;
     margin-left: -9999px;
@@ -35,6 +122,7 @@ a {
 
   a.signIn {
     color: #4e8586;
+    display: block;
   }
 }
 
@@ -50,63 +138,150 @@ a {
 .new_temporary_user {
   margin-bottom: 10px;
 
-  input {
-    border-radius: 3px;
-    border: none;
+} // End new_temporary_user
+
+/***************  Success  ***************/
+#success_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: blue;
+  background: url(<%= asset_data_uri 'success_background.jpg'%>);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.success {
+  width: 650px;
+  height: 400px;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+
+
+  h1 {
+    font-weight: normal;
   }
 
-  ::-webkit-input-placeholder {
-    color: rgba(129, 140, 141, .7);
-    font-style: italic;
+  p {
+    font-size: 1.3em;
+    color: rgb(197, 197, 189);
+  }
+}
+
+
+
+/***************  New User  ***************/
+#new_user_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(<%= asset_data_uri 'new_user_background.jpg'%>);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.new_user_form {
+  width: 420px;
+  height: 400px;
+  margin: 325px auto 0 auto;
+  color: #aa6d63;
+  font-weight: bold;
+  position: relative;
+
+  .first-container, .last-container {
+    height: 60px;
+    float: left;
   }
 
-  :-moz-placeholder { /* Firefox 18- */
-    color: rgba(129, 140, 141, .7);
-    font-style: italic;
+  .error {
+    top: -20px;
+    left: 95px;
   }
 
-  ::-moz-placeholder {  /* Firefox 19+ */
-    color: rgba(129, 140, 141, .7);
-    font-style: italic;
+  .first-container {
+    position: relative;
+    width: 245px;
   }
 
-  :-ms-input-placeholder {  
-    color: rgba(129, 140, 141, .7);
-    font-style: italic;
+  .last-container {
+    position: relative;
+    margin-left: 5px;
+    .error {
+      left: 0px;
+    }
   }
 
-  input:focus {
-    outline-offset: 0px;
-    outline: none;
-    box-shadow: 0px 0px 2px 1px rgba(211, 111, 61, .2);
+  .password-container {
+    position: relative;
+    height: 60px;
+    width: 415px;
+    margin-bottom: 55px;
   }
 
-  input[type=email] {
-    width: 230px;
-    height: 2.6em;
-    padding: 5px;
-    font-size: .8em;
-    font-style: normal; 
-    color: #818c8d;
-    text-align: center;
-    border: none;
-    background: #334555;
-    margin: 0 0 10px 0; 
-  }
-
-  input[type=submit] {
-    height: 42px;
-    padding: 12px;
-    font-size: .8em;
-    color: #579794;
-    background: none;
-    border: 1px solid #579794;
-  }
-
-  input[type=submit]:hover {
-    color: rgb(45, 57, 81);
-    background: #579794;
+  .confirmation-container {
+    position: relative;
+    height: 60px;
+    width: 400px
   }
 
   
+
+  h2 {
+    font-weight: normal;
+    text-align: center;
+    color: #4e8586;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  input {
+    background: rgba(51, 69, 85, .4);
+    font-size: 1em;
+    text-indent: 15px;
+    height: 1.5em;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  input.first_name, input.last_name {
+    width: 140px;
+    font-style: normal; 
+    color: #818c8d;
+    text-align: left;
+    border: none;
+  }
+  input.first_name {
+    margin-left: 45px; 
+  }
+
+  input.last_name {
+    width: 150px;
+  }
+  input[type=password] {
+    color: #818c8d;
+    width: 307px;
+    margin-left: 17px;
+  }
+
+  input[type=submit] {
+    position: relative;
+    display: block;
+    margin: 25px auto 0 auto;
+    text-align: center;
+    text-indent: 0px;
+    width: 175px;
+    height: 2.4em;
+    font-size: 1.2em;
+    background: none;
+  }
+
+  input[type=password].confirmation {
+    margin-left: 95px;
+  }
+
+
 }
+

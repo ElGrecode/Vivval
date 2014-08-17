@@ -16,6 +16,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# And jquery UI for tooltips
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -32,6 +35,8 @@ gem 'spring',        group: :development
 # Figaro gem for maintaining environment variables
 gem 'figaro'
 
+# Client side validations on our forms
+#gem 'client_side_validations'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

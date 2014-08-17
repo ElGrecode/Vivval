@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users
+  resources :users, except: :new
   resources :temporary_users, only: [:new, :create]
+
+  get 'users/new/:uuid' => 'users#new', as: :new_user
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

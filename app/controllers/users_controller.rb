@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
   # GET /users
   # GET /users.json
   def index
@@ -10,11 +11,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find_by(uuid: params(:uuid))
+    @user = User.find_by(uuid: params[:uuid])
   end
 
   # GET /users/new
   def new
+    get_temporary_user
+    # check if uuid is valid on temporary_users model
+    redirect_to root_path if !@temporary_user
     @user = User.new
   end
 
@@ -25,14 +29,14 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    get_temporary_user
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { redirect_to :back }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -71,5 +75,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params[:user]
+    end
+
+    def get_temporary_user
+      @temporary_user = TemporaryUser.find_by(uuid: params[:uuid])
     end
 end
