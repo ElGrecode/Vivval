@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @user = User.new
+    @is_login = true
     @users = User.all
   end
 
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
+        format.html { redirect_to user_home_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { redirect_to :back }

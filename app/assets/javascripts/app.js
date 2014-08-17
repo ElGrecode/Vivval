@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // validate signup form on keyup and submit
     $("#new_user").validate({
+      ignore: ".ignore",
       rules: {
         'user[first_name]': "required",
         'user[last_name]': "required",
