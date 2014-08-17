@@ -1,7 +1,9 @@
-<h1>Log In</h1>
-
-<%= form_for @user, {url: session_path } do |f| %>
-  <%= f.text_field :email, placeholder: "Your email address" %><br>
+<div class="login_wrapper inactive">
+<%= form_for @user, {url: session_path}  do |f| %>
+  <%= f.email_field :email, placeholder: "Your email address" %><br>
   <%= f.password_field :password, placeholder: "Password", class: 'ignore'  %><br>
   <%= f.submit  "Log In"%>
-<% end %>
+<% end %>  
+</div>
+
+

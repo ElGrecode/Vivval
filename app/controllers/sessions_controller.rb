@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to decisions_path
+    redirect_to user_home_path
   end
 end
