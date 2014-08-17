@@ -2,25 +2,24 @@ $(document).ready(function() {
     // validate signup form on keyup and submit
     $("#new_user").validate({
       rules: {
-        first: "required",
-        last: "required",
-        password: {
+        'user[first_name]': "required",
+        'user[last_name]': "required",
+        'user[password]': {
           required: true,
           minlength: 6
         },
-        confirmation: {
+        'user[password_confirmation]': {
           equalTo: "#password"
         }
       },
       messages: {
-        first: "Your first name?",
-        last: "What's up with your last name?",
-        password: {
+        'user[first_name]': "Your first name?",
+        'user[last_name]': "What's up with your last name?",
+        'user[password]': {
           required: "Throw me a password",
           minlength: "Your password must be at least 6 characters long"
         },
-        confirmation: {
-          required: "I need a confirmation from you to match your password",
+        'user[password_confirmation]': {
           equalTo: "Your passwords don't match"
         }
       }
