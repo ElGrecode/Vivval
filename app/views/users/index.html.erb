@@ -2,7 +2,11 @@
   <header>
     <div></div>
     <% if current_user %>
-      <%= link_to "Log out", session_path, method: :delete, class: 'logout btn' %>
+      <div class="logout btn">
+        <%= link_to "", session_path, method: :delete, class: "logout_link" %>  
+        <%= image_tag "logout.svg" %>
+      </div>
+      
     <% else %>
       <%= link_to "Sign up", root_path, class: 'signup btn' %>
       <%= link_to "Log in", "#", class: 'login btn' %>
@@ -10,17 +14,23 @@
   </header>
   
 
-  <h1>App Mockup</h1>
+  
 
   <%= render partial: 'sessions/sessions_form' %>
 
+  <% if current_user %>
+  <h1>App Mockup</h1>
+  <section class="mockup">
+    <div class="overlay"></div>
+    <%= image_tag "iphone_vector.svg" %>
+  </section>
+
   <footer>
-    <% if current_user %>
+    
       <h3>
-        Welcome, <%= current_user.first_name %>!
+        Logged in as <%= current_user.first_name %>
       </h3>
     <% end %>
-    Links and User Info for testing
   </footer>
 </div>
 
