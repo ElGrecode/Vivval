@@ -32,6 +32,9 @@ gem 'spring',        group: :development
 # UUID Tools Gem for unique user IDs
 # gem 'uuidtools'
 
+# Roadie gem for html email process
+gem 'roadie-rails'
+
 # Figaro gem for maintaining environment variables
 gem 'figaro'
 

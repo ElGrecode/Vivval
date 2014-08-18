@@ -8,7 +8,6 @@ class UserMailer < ActionMailer::Base
   #
   def request_invite(temp_user)
     @temporary_user = temp_user
-
     mail to: @temporary_user.email, subject: "Welcome to Vivval"
   end
 end
