@@ -1,0 +1,2 @@
+module BlazonsHelper
+end

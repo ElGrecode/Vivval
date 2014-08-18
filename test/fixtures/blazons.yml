@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  user: 
+  body: MyString
+  promotions: MyString
+  geolocation: MyString
+
+two:
+  uuid: MyString
+  user: 
+  body: MyString
+  promotions: MyString
+  geolocation: MyString

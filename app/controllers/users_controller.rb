@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     @user = User.new
     @is_login = true
     @users = User.all
+    @blazon = Blazon.new
+    # super dirty, fix after presentation
+    @current_user_id = User.all.reverse.first.uuid
   end
 
   # GET /users/1

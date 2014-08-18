@@ -17,7 +17,20 @@
   <% if current_user %>
   <h1>App Mockup</h1>
   <section class="mockup">
-    <div class="overlay"></div>
+    <div class="overlay">
+      <div class="blaze_wrapper">
+        <div class="header">
+          Vivval
+        </div>
+        <div class="location">2nd Street / Broadway<br>Santa Monica</div>
+        <%= image_tag "enabled.png", class: 'enabled' %>
+        <%= form_for @blazon do |f| %>
+          <%= f.hidden_field :user_id, :value => @current_user_id %>
+          <%= f.text_area :body, placeholder: "^Blaze Away" %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
     <%= image_tag "iphone_vector.svg" %>
   </section>
   <footer>

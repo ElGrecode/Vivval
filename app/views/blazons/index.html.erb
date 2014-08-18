@@ -1,0 +1,23 @@
+<h1>Listing blazons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blazons.each do |blazon| %>
+      <tr>
+        <td><%= link_to 'Show', blazon %></td>
+        <td><%= link_to 'Edit', edit_blazon_path(blazon) %></td>
+        <td><%= link_to 'Destroy', blazon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blazon', new_blazon_path %>

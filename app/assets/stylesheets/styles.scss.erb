@@ -42,6 +42,10 @@ a {
   display: block;
 }
 
+.block {
+  display: block;
+}
+
 /*  Input Elems  */
 input {
     border-radius: 3px;
@@ -253,7 +257,7 @@ label.error {
 
   h2 {
     font-weight: normal;
-    text-align: center;
+    text-align: right;
     color: #4e8586;
     font-size: 1.4em;
     margin-bottom: 20px;
@@ -380,7 +384,6 @@ header {
     width: 256px;
     position: absolute;
     overflow: hidden;
-    background: blue;
     z-index: 1;
     left: 192px;
     top: 144px;
@@ -435,6 +438,55 @@ footer {
   margin-top: 20px;
 }
 
+.blaze_wrapper {
+  width: 93%;
+  height: 100%;
+  padding: 10px;
+
+  .header {
+    border-bottom: 1px solid #3b3745;
+  }
+
+  input[type=text]{
+    margin-top: 5px;
+    width: 93%;
+    height: 180px;
+    background: white;
+    border: none;
+    border-radius: none;
+  }
+  .location {
+    position: absolute;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    width: 100%;
+  }
+  .enabled {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    float: left;
+  }
+
+
+  textarea {
+    resize: none;
+    width: 85%;
+    height: 210px;
+    padding: 15px;
+    margin-top: 30px;
+    border: 2px solid rgba(145, 145, 145, .1);
+    font-size: 1.4em;
+  }
+
+  textarea:focus {
+    outline-offset: 0px;
+    outline: none;
+  }
+}
 
 
 

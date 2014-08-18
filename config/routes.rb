@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :index]
   resources :temporary_users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
+  resources :blazons
 
   get 'users/new/:uuid' => 'users#new', as: :new_user
+  get 'users/:uuid/blazons' => 'blazons#show', as: :user_blazons
   get 'home' => 'users#index', as: :user_home
 
   # The priority is based upon order of creation: first created -> highest priority.
