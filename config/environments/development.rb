@@ -19,10 +19,10 @@ Rails.application.configure do
   # config.action_mailer.default_url_options = { host: "railscasts.com" }
 
   # Change Mail delivery to either :smtp, :sendmail, :file, :test
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = 'smtp'
   config.action_mailer.smtp_settings = {
     address:              "smtp.gmail.com",
-    port:                 587,
+    port:                 25,
     domain:               "heroku.com",
     authenication:        "plain",
     enable_starttls_auto: true,
