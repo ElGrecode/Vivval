@@ -43,10 +43,7 @@ gem 'figaro'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-group :development do
-  # Use mysql as the database for Active Record
-  gem 'mysql2'
-end
+gem 'mysql2'
 
 group :production do
   # Use mysql as the database for Active Record
