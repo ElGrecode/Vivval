@@ -44,7 +44,7 @@ gem 'figaro'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'mysql'
-gem 'mysql2'
+# gem 'mysql2'
 
 group :production do
   # Use mysql as the database for Active Record

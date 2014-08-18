@@ -62,7 +62,6 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     mysql (2.8.1)
-    mysql2 (0.3.16)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     polyglot (0.3.5)
@@ -141,7 +140,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql
-  mysql2
   rails (= 4.1.1)
   rails_12factor (= 0.0.2)
   roadie-rails
