@@ -50,7 +50,6 @@ end
 
 group :production do
   # Use mysql as the database for Active Record
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
