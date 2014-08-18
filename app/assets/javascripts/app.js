@@ -26,8 +26,8 @@ $(document).ready(function() {
       }
     });
 
-    $('.login').on('click', function(){
-      $('.login_wrapper').toggleClass('inactive');
-    })
+    $('.login').hover(function(){
+      $('.login_wrapper').removeClass('inactive');
+    });
 
   });

@@ -19,12 +19,9 @@ class TemporaryUsersController < ApplicationController
   # Creates a temporary web page or a page that accepts random token
   # Sends a email to an entered email address
   # In the email would be the temporarily created register page
-
   def create
     @temporary_user = TemporaryUser.new(params.require(:temporary_user).permit(:email))
     if @temporary_user.save
-      # todo: create a temporary page or generate a random token
-      # todo: send an email
       UserMailer.request_invite(@temporary_user).deliver
       redirect_to success_path
     else

@@ -7,10 +7,7 @@
         <%= f.email_field :email, placeholder: 'myName@someEmail.com' %>
         <%= f.submit 'Request Invite' %>
       <% end -%>
-      <%= link_to "Or Sign In", {action: 'lander'},  class: 'signIn'  %>
+      <%= link_to "Or Sign In", user_home_path,  class: 'signIn'  %>
     <% end %>
-
-    
-
   </div>
 </div>

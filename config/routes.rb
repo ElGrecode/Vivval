@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'users/new/:uuid' => 'users#new', as: :new_user
   get 'home' => 'users#index', as: :user_home
 
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

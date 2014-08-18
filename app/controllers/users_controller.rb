@@ -31,10 +31,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    get_temporary_user
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
     respond_to do |format|
       if @user.save
+        create_session
         format.html { redirect_to user_home_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -81,5 +81,13 @@ class UsersController < ApplicationController
 
     def get_temporary_user
       @temporary_user = TemporaryUser.find_by(uuid: params[:uuid])
+    end
+
+    def create_session
+      if @user 
+        u = User.where(email: @user.email).first
+        # Store as a cookie in the users' browser with unique ID identifying them
+        session[:user_uuid] = u.uuid.to_s
+      end
     end
 end

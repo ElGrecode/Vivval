@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
 
   def create
-    # Find the user that is trying to log in
+    # Find a user based on entered email address
     u = User.where(email: params[:user][:email]).first
-    # If we do have that user
+
     if u && u.authenticate(params[:user][:password])
-      # Store as a cookie in the users' browser the ID of them
-      # Indicating that they are logged in
+      # Store as a cookie in the users' browser with unique ID identifying them
       session[:user_uuid] = u.uuid.to_s
       redirect_to user_home_path
     else
